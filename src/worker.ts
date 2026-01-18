@@ -1,4 +1,4 @@
-
+/// <reference lib="webworker" />
 import { pipeline, env } from '@xenova/transformers';
 
 // Skip local checks
@@ -6,7 +6,7 @@ env.allowLocalModels = false;
 env.useBrowserCache = false;
 
 class PipelineSingleton {
-    static task = 'text2text-generation';
+    static task = 'text2text-generation' as const;
     static model = 'Xenova/LaMini-Flan-T5-783M';
     static instance: any = null;
 
